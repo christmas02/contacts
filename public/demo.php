@@ -39,20 +39,21 @@ foreach ($contacts as $contact){
 
     $preNumero = substr($contact[33], 0, 2);
 
-    
 
     if(in_array($preNumero, $moov)){
+        echo $lastNumber = substr($noSpaceInNumber, 0, 8).' devient -> ';
+        echo $newNumber ="01$noSpaceInNumber (<span style='color:green'>moov</span>)<br>";
         
-        echo $newNumber ="01$noSpaceInNumber => <span style='color:green'>moov</span><br> ";
         echo "<hr>";
     } elseif(in_array($preNumero, $mtn)){
-            echo $newNumber = "05$noSpaceInNumber => <span style='color:yellow'>mtn</span><br>";
+            echo $lastNumber = substr($noSpaceInNumber, 0, 8). ' devient -> ';
+            echo $newNumber = "05$noSpaceInNumber (<span style='color:#f1c40f'>mtn</span>)<br>";
             echo "<hr>";
     }elseif (in_array($preNumero, $orange)) {
-            echo $newNumber = "07$noSpaceInNumber => <span style='color:orange'>orange</span><br>";
+            echo $lastNumber = substr($noSpaceInNumber, 0, 8). '  devient -> ';
+            echo $newNumber = "07$noSpaceInNumber (<span style='color:orange'>orange</span>)<br>";
             echo "<hr>";
         }
-
     }
 
 }
