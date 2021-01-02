@@ -8,9 +8,9 @@ require 'functions.php';
 $stmnt = $db->query("SELECT * FROM contacts");
 $contacts = $stmnt->fetchAll();
 
-$moov   = ['01', '02', '03', '41', '42', '43', '51', '52', '53', '61', '62', '63', '71', '72', '73', '81', '82', '83',];
-$mtn    = ['04', '05', '06', '44', '45', '46', '54', '55', '56', '64', '65', '66', '74', '75', '76', '84', '85', '86',];
-$orange = ['07', '08', '09', '47', '48', '49', '57', '58', '59', '67', '68', '69', '77', '78', '79', '87', '88', '89',];
+$moov   = [01, 02, 03, 41, 42, 43, 51, 52, 53, 61, 62, 63, 71, 72, 73, 81, 82, 83];
+$mtn    = [04, 05, 06, 44, 45, 46, 54, 55, 56, 64, 65, 66, 74, 75, 76, 84, 85, 86];
+$orange = [07, 05, 06, 47, 48, 49, 57, 58, 59, 67, 68, 69, 77, 78, 79, 87, 88, 89];
 
 foreach ($contacts as $contact) {
 
@@ -18,19 +18,28 @@ foreach ($contacts as $contact) {
 
     $lengths = strlen($numberWithoutSpace).'<br>';
 
-if ($lengths == 8) {
-        // echo $numberWithoutSpace.'<br>';
-    
-    $firstIndexs = substr($numberWithoutSpace, 0, 2).'<br>'; 
+    if ($lengths == 8) {
 
-    if ($firstIndexs == 02) {
-        // echo $numberWithoutSpace.'<br>';
+       // $taille = count($lengths);
 
-        $newNumber = str_replace(' '.$numberWithoutSpace, '01.$numberWithoutSpace', $numberWithoutSpace);
-        echo $newNumber . '<br>';
+       //echo $numberWithoutSpace . '<br>';
+
+    //    dump($numberWithoutSpace);
+       
+
+       // $firstIndexs = substr($numberWithoutSpace, 0, 2).'<br>'; 
+
+            // if ($firstIndexs == $moov[$i]) {
+            //     $convertNumber = '01' . $numberWithoutSpace;
+            //     echo $convertNumber . '<br>';
+            // } elseif ($firstIndexs == 45) {
+            //     $convertNumber = '05' . $numberWithoutSpace;
+            //     echo $convertNumber . '<br>';
+            // } elseif ($firstIndexs == 47) {
+            //     $convertNumber = '07' . $numberWithoutSpace;
+            //     echo $convertNumber . '<br>';
+            // }
     }
-
-
     // $tab = array($firstIndexs);
 
     // for ($i=0; $i < $tab.length; $i++) { 
@@ -38,13 +47,9 @@ if ($lengths == 8) {
     //        echo $numberWithoutSpace;
     //    }
     // }
+    //dump($numbre);
 
-   //dump($tab);
-
-
-
-}
-
+   
 }
 
 
